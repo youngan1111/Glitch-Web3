@@ -1,7 +1,9 @@
-import Box from "@mui/material/Box"
-import Link from "@mui/material/Link"
-import Toolbar from "@mui/material/Toolbar"
-import Typography from "@mui/material/Typography"
+import Box from "@mui/material/Box";
+import Link from "@mui/material/Link";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 
 const sections = [
   {
@@ -32,59 +34,72 @@ const sections = [
   //   title: "Ferum",
   //   url: "/ferum",
   // },
-]
+];
 
 export default function Header({ path }) {
   return (
     <>
-      <Toolbar sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Typography
-          component="h2"
-          variant="h5"
-          color="inherit"
-          align="left"
-          noWrap
-          sx={{ flex: 1 }}
-          style={{ fontWeight: 600 }}
-        >
+      <Container>
+        <Logo>
           <Link href="/" underline="none" color="inherit">
             zkBNB analytics
           </Link>
-        </Typography>
-      </Toolbar>
-
-      <Toolbar
-        component="nav"
-        variant="dense"
-        sx={{ justifyContent: "flex-start" }}
-      >
-        {sections.map((section) => {
-          return (
-            <Link
-              underline="hover"
-              color="inherit"
-              noWrap
-              key={section.url}
-              variant="body2"
-              href={section.url}
-              sx={{ p: 1, mr: 5 }}
-              style={{
-                textDecorationLine: path == section.url ? "underline" : "none",
-              }}
-            >
-              <Box
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  flexWrap: "wrap",
-                }}
+        </Logo>
+        <MenuWrapper>
+          {sections.map((section) => {
+            return (
+              <Link
+                underline="hover"
+                color="inherit"
+                noWrap
+                key={section.url}
+                variant="body2"
+                href={section.url}
               >
-                {section.title}
-              </Box>
-            </Link>
-          )
-        })}
-      </Toolbar>
+                <Menu
+                  style={{
+                    color: path === section.url ? "white" : "#BDBDBD",
+                  }}
+                >
+                  {section.title}
+                </Menu>
+              </Link>
+            );
+          })}
+        </MenuWrapper>
+      </Container>
     </>
-  )
+  );
 }
+
+const Container = styled.div`
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 80px;
+  background-color: #000000;
+`;
+
+const MenuWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+`;
+
+const Logo = styled.span`
+  font-size: 28px;
+  font-weight: 900;
+  padding: 0px;
+  color: white;
+`;
+
+const Menu = styled.span`
+  font-size: 15px;
+  font-weight: 500;
+  color: #ebebeb;
+`;
