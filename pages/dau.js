@@ -134,7 +134,6 @@ export default function DAU() {
 
   return (
     <>
-      <Header path="/dau" />
       <Container>
         <DauWrapper>
           <DauBox>

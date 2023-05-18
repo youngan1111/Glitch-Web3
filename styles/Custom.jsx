@@ -2,12 +2,12 @@ import styled from "@emotion/styled";
 
 const Container = styled.div`
   width: 100%;
-  min-height: calc(100vh - 70px);
+  min-height: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  padding: 0px 20px;
+  padding: 40px 20px 0px 20px;
   background-color: black;
 `;
 
