@@ -1,6 +1,6 @@
 # QVE Glitch Hackathon
 
-### ✅ Local
+## Getting Started
 
 ```
   $ git clone https://github.com/ziptalk/QVE_dashboard_front.git
