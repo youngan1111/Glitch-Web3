@@ -11,7 +11,9 @@ import {
 import { Bar } from "react-chartjs-2"
 import Paper from "@mui/material/Paper"
 import zoomPlugin from "chartjs-plugin-zoom"
-import getDateRange from "../utils/getDatesStartToLast"
+import { createTheme, ThemeProvider } from "@mui/material/styles"
+
+const darkTheme = createTheme({ palette: { mode: "dark" } })
 
 ChartJS.register(
   CategoryScale,
@@ -48,26 +50,6 @@ export default function BarChart({ chartData, chartLabel, topLabel }) {
           mode: "x",
         },
       },
-      // annotation: {
-      //   annotations: getDateRange(
-      //     "2023-01-07",
-      //     new Date().toISOString().slice(0, 10)
-      //   ).map((ele) => {
-      //     let temp = {
-      //       type: "line",
-      //       borderColor: "black",
-      //       borderWidth: 1,
-      //       label: {
-      //         backgroundColor: "navy",
-      //         content: `${ele} 00:00`,
-      //         display: true,
-      //       },
-      //       scaleID: "x",
-      //       value: `${ele} 00:00`,
-      //     }
-      //     return temp
-      //   }),
-      // },
     },
   }
 
@@ -83,8 +65,10 @@ export default function BarChart({ chartData, chartLabel, topLabel }) {
   }
 
   return (
-    <Paper elevation={1} sx={{ m: 3 }}>
-      <Bar options={options} data={data} />
-    </Paper>
+    <ThemeProvider theme={darkTheme}>
+      <Paper elevation={1} sx={{ m: 3, width: "80%", margin: "auto" }}>
+        <Bar options={options} data={data} />
+      </Paper>
+    </ThemeProvider>
   )
 }

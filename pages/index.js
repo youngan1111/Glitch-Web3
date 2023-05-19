@@ -1,14 +1,14 @@
-import styled from "@emotion/styled";
-import Header from "../components/Header";
-import Typography from "@mui/material/Typography";
-import Asset from "../assets/image/assets.svg";
-import Lines from "../assets/image/lines.svg";
-import Image from "next/image";
-import Discord from "../assets/image/discord.svg";
-import Twitter from "../assets/image/twitter.svg";
-import Telegram from "../assets/image/telegram.svg";
-import { keyframes } from "@emotion/react";
-import Objet from "../components/Objet";
+import styled from "@emotion/styled"
+import Header from "../components/Header"
+import Typography from "@mui/material/Typography"
+import Asset from "../assets/image/assets.svg"
+import Lines from "../assets/image/lines.svg"
+import Image from "next/image"
+import Discord from "../assets/image/discord.svg"
+import Twitter from "../assets/image/twitter.svg"
+import Telegram from "../assets/image/telegram.svg"
+import { keyframes } from "@emotion/react"
+import Objet from "../components/Objet"
 
 export default function Home() {
   return (
@@ -19,6 +19,7 @@ export default function Home() {
           <Image
             src={Asset}
             width={200}
+            alt="image"
             style={{
               width: "200px",
               height: "auto",
@@ -31,6 +32,7 @@ export default function Home() {
           <Image
             src={Lines}
             width={1000}
+            alt="image"
             style={{
               width: "1200px",
               height: "auto",
@@ -44,20 +46,27 @@ export default function Home() {
         <TitleWrapper>
           <Title>Simple and Fast access to Data</Title>
           <Subtitle>of BNB’s new layer</Subtitle>
-          <Caption>{`Hello, Doyeon and Youngan.. It's 1 a.m. now.\nI was going to sleep, but I woke up thinking I should do it...\nAnd I turned the Papago because I am not good at English.\nThere's nothing here, so I put in something because it felt so empty.\n You can take it out if you don't need it. (Laughing)`}</Caption>
+          <Caption>
+            {
+              "zkBNB Analytics is a data analytics tool and data services for zkBNB, a trustless and\nscaling L2 solution for BNB Smart Chain"
+            }
+          </Caption>
           <IconsWrapper>
             <Image
               src={Discord}
+              alt="image"
               height={20}
               style={{ width: "auto", height: "20px", cursor: "pointer" }}
             />
             <Image
               src={Twitter}
+              alt="image"
               height={20}
               style={{ width: "auto", height: "20px", cursor: "pointer" }}
             />
             <Image
               src={Telegram}
+              alt="image"
               height={20}
               style={{ width: "auto", height: "20px", cursor: "pointer" }}
             />
@@ -65,7 +74,7 @@ export default function Home() {
         </TitleWrapper>
       </Container>
     </>
-  );
+  )
 }
 
 const fadeIn = keyframes`
@@ -77,7 +86,7 @@ const fadeIn = keyframes`
     opacity: 1;
     transform: translateY(0px);
   }
-`;
+`
 
 const Container = styled.div`
   width: 100%;
@@ -90,7 +99,7 @@ const Container = styled.div`
   position: relative;
   overflow: hidden;
   padding-right: 100px;
-`;
+`
 
 const ImageWrapper = styled.div`
   width: 100%;
@@ -100,7 +109,7 @@ const ImageWrapper = styled.div`
   left: 30%;
   transform: translate(-50%, -50%);
   opacity: 0.2;
-`;
+`
 
 const TitleWrapper = styled.div`
   display: flex;
@@ -109,21 +118,21 @@ const TitleWrapper = styled.div`
   justify-content: center;
   gap: 10px;
   animation: ${fadeIn} 2s ease-in-out;
-`;
+`
 
 const Title = styled.span`
   font-size: 42px;
   font-weight: 700;
   color: white;
   text-align: end;
-`;
+`
 
 const Subtitle = styled.span`
   font-size: 28px;
   font-weight: 300;
   color: white;
   text-align: end;
-`;
+`
 
 const Caption = styled.span`
   font-size: 15px;
@@ -134,7 +143,7 @@ const Caption = styled.span`
   letter-spacing: 1px;
   line-height: 20px;
   margin-top: 30px;
-`;
+`
 
 const IconsWrapper = styled.div`
   display: flex;
@@ -143,4 +152,4 @@ const IconsWrapper = styled.div`
   justify-content: flex-end;
   gap: 20px;
   margin-top: 30px;
-`;
+`

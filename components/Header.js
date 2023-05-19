@@ -1,11 +1,8 @@
-import Box from "@mui/material/Box";
-import Link from "@mui/material/Link";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import styled from "@emotion/styled";
-import Image from "next/image";
-import Logo from "../assets/image/Logo.svg";
-import { useRouter } from "next/router";
+import Link from "@mui/material/Link"
+import styled from "@emotion/styled"
+import Image from "next/image"
+import Logo from "../assets/image/Logo.svg"
+import { useRouter } from "next/router"
 
 const sections = [
   {
@@ -20,26 +17,10 @@ const sections = [
     title: "Today Txns",
     url: "/todayTxns",
   },
-  // {
-  //   title: "BINANCE Perp vs Quarter",
-  //   url: "/binancePerpQuarter",
-  // },
-  // {
-  //   title: "Arbitrage testnet",
-  //   url: "/arbitrageTestnet",
-  // },
-  // {
-  //   title: "Ref.finance",
-  //   url: "/refFinance",
-  // },
-  // {
-  //   title: "Ferum",
-  //   url: "/ferum",
-  // },
-];
+]
 
-export default function Header({ path }) {
-  const router = useRouter();
+export default function Header() {
+  const router = useRouter()
   return (
     <>
       <Container>
@@ -71,12 +52,12 @@ export default function Header({ path }) {
                   {section.title}
                 </Menu>
               </Link>
-            );
+            )
           })}
         </MenuWrapper>
       </Container>
     </>
-  );
+  )
 }
 
 const Container = styled.div`
@@ -92,7 +73,7 @@ const Container = styled.div`
   top: 0px;
   left: 0px;
   z-index: 10;
-`;
+`
 
 const MenuWrapper = styled.div`
   display: flex;
@@ -100,10 +81,10 @@ const MenuWrapper = styled.div`
   align-items: center;
   justify-content: flex-end;
   gap: 20px;
-`;
+`
 
 const Menu = styled.span`
   font-size: 15px;
   font-weight: 500;
   color: #ebebeb;
-`;
+`
